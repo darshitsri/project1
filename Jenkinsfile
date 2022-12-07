@@ -1,44 +1,30 @@
-pipeline{
-    
+pipeline{ 
     agent any 
     stages {
-        
-        stage('Git Checkout'){
-            
-            steps{
-                
-                script{
-                    
+        stage('Git Checkout'){ 
+            steps{ 
+                script{ 
                     git branch: 'main', url: 'https://github.com/darshitsri/project1.git'
                 }
             }
         }
-     stage('UNIT testing'){
-            
+     stage('UNIT testing'){   
             steps{
-                
-                script{
-                    
+                script{ 
                     sh 'mvn test'
                 }
             }
         }
      stage('Integration testing'){
-            
-            steps{
-                
-                script{
-                    
+            steps{ 
+                script{ 
                     sh 'mvn verify -DskipUnitTests'
                 }
             }
         }
-       stage('Maven build'){
-            
-            steps{
-                
-                script{
-                    
+       stage('Maven build'){ 
+            steps{ 
+                script{ 
                     sh 'mvn clean install'
                 }
             }
