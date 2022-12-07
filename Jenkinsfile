@@ -1,73 +1,26 @@
 pipeline{
-    
     agent any 
-    
-    stages {
-        
+    stages {   
         stage('Git Checkout'){
-            
-            steps{
-                
-                script{
-                    
+            steps{ 
+                script{   
                    git branch: 'master', url: 'https://github.com/darshitsri/project1.git'
                 }
             }
         }
         stage('UNIT testing'){
-            
             steps{
-                
-                script{
-                    
+                script{ 
                     sh 'mvn test'
                 }
             }
         }
-        stage('Integration testing'){
-            
-            steps{
-                
-                script{
-                    
-                    sh 'mvn verify -DskipUnitTests'
-                }
-            }
-        }
         stage('Maven build'){
-            
             steps{
-                
-                script{
-                    
+                script{ 
                     sh 'mvn clean install'
                 }
             }
         }
-        stage('Static code analysis'){
-            
-            steps{
-                
-                script{
-                    
-                    withSonarQubeEnv(credentialsId: 'sonar-api') {
-                        
-                        sh 'mvn clean package sonar:sonar'
-                    }
-                   }
-                    
-                }
-            }
-            stage('Quality Gate Status'){
-                
-                steps{
-                    
-                    script{
-                        
-                        waitForQualityGate abortPipeline: false, credentialsId: 'sonar-api'
-                    }
-                }
-            }
-        }
-        
+     }   
 }
