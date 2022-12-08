@@ -47,7 +47,7 @@
         </dependency>
         <dependency>
             <groupId>com.sun.activation</groupId>
-            <artifactId>all</artifactId>
+            <artifactId>javax.activation</artifactId>
             <version>1.2.0</version>
         </dependency>
     </dependencies>
