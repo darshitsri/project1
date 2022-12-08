@@ -15,15 +15,15 @@ pipeline{
                 }
             }
         }
-        // stage('Static code analysis'){ 
-         //   steps{
-           //     script{
-             //       withSonarQubeEnv(credentialsId: 'sonar-qube-api') {  
-               //         sh 'mvn clean package sonar:sonar'
-                 //   }
-                 // } 
-               // }
-           // } 
+         stage('Static code analysis'){ 
+            steps{
+                script{
+                    withSonarQubeEnv(credentialsId: 'sonar-qube-api') {  
+                        sh 'mvn clean package sonar:sonar'
+                    }
+                  } 
+                }
+            } 
         stage('Maven build'){
             steps{
                 script{ 
