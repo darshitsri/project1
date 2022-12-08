@@ -9,11 +9,17 @@
     <version>1.0-SNAPSHOT</version>
     <name>OnlineVotingSystemV3</name>
     <packaging>war</packaging>
-
+    
     <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <junit.version>5.7.1</junit.version>
+        <property>
+          <maven.compiler.target>1.8</maven.compiler.target>
+          <maven.compiler.source>1.8</maven.compiler.source>
+          <junit.version>5.7.1</junit.version>
+        </property>
+        <property>
+           <sonar.organization>darshitsri</sonar.organization>
+           <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        </property>             
     </properties>
     
     <properties>
