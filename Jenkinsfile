@@ -30,6 +30,13 @@ pipeline{
                     sh 'mvn clean install'
                 }
             }
-          }         
-        }
+          }
+        stage('Docker image build'){
+            steps{
+                script{
+                    sh 'pwd'
+                }
+            }
+         }  
+       }
      }   
