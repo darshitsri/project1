@@ -41,6 +41,16 @@ pipeline{
                     sh 'docker push darshitsri/demo_app:latest'
                 }
             }
-         }  
-       }
-     }   
+         } 
+        stage ('docker image push'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'docker_hub1', variable: 'docker_hub_login')]) {
+                        sh 'docker login -u darshitsri -p ${docker_hub_login}'
+                        sh 'docker image push darshitsri/demo_app:latest'
+                    }
+                  }
+               }
+             }                  
+          }
+        }   
