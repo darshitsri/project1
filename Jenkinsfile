@@ -36,7 +36,7 @@ pipeline{
                 script{
                     sh 'pwd'
                     sh 'ls -lrths'
-                    sh 'docker image build -t demo_app .'
+                    sh 'docker image build -t demo_app:$BUILD_ID .'
                 }
             }
          }  
