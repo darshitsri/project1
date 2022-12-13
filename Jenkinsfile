@@ -35,6 +35,7 @@ pipeline{
             steps{
                 script{
                     sh 'pwd'
+                    sh 'docker image build -t demo_app'
                 }
             }
          }  
