@@ -37,8 +37,8 @@ pipeline{
                     sh 'pwd'
                     sh 'ls -lrths'
                     sh 'docker image build -t demo_app:$BUILD_ID .'
-                    sh 'docker image tag demo_app:$BUILD_ID dockerhub/demo_app'
-                    sh 'docker push dockerhub/demo_app:latest'
+                    sh 'docker image tag demo_app:$BUILD_ID darshitsri/demo_app'
+                    sh 'docker push darshitsri/demo_app:latest'
                 }
             }
          }  
