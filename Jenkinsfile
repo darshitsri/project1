@@ -51,6 +51,13 @@ pipeline{
                     }
                   }
                }
-             }                  
-          }
-        }   
+             } 
+        stage ('kubernetes deployment')
+            steps{
+                script{
+                    sh 'pwd'
+                }
+            }
+         }
+       }
+     }   
