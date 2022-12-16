@@ -52,7 +52,7 @@ pipeline{
                   }
                }
              } 
-        stage ('kubernetes deployment')
+        stage ('kubernetes deployment'){
             steps{
                 script{
                     sh 'pwd'
