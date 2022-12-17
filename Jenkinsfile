@@ -4,7 +4,7 @@ pipeline{
         stage('Git Checkout'){
             steps{ 
                 script{   
-                   git branch: 'main', url: 'https://github.com/darshitsri/project1.git'
+                   git branch: 'java-application', url: 'https://github.com/darshitsri/project1.git'
                 }
             }
         }
