@@ -37,7 +37,7 @@ pipeline{
                     sh 'pwd'
                     sh 'ls -lrths'
                     sh 'docker image build -t java_app:$BUILD_ID .'
-                    sh 'docker image tag java_app:$BUILD_ID darshitsri/demo_app'
+                    sh 'docker image tag java_app:$BUILD_ID darshitsri/java_app'
                     //sh 'docker push darshitsri/java_app:latest'
                 }
             }
