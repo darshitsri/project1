@@ -56,6 +56,7 @@ pipeline{
             steps{
                 script{
                     sh 'pwd'
+                    sh 'kubectl get ns'
                 }
             }
          }
