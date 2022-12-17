@@ -1,3 +1,4 @@
-FROM tomcat:9.0.48-jdk11-openjdk-slim
-WORKDIR /usr/local/tomcat/webapps
-COPY target/OnlineVotingSystemV3-1.0-SNAPSHOT.war .
+FROM lolhens/baseimage-openjre
+ADD target/springbootApp.jar springbootApp.jar
+EXPOSE 80
+ENTRYPOINT ["java", "-jar", "springbootApp.jar"]
