@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: java_app_deployment
+  name: javadeployment
   labels:
-    app: java_app
+    app: javaapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: java_app
+      app: javaapp
   template:
     metadata:
       labels:
-        app: java_app
+        app: javaapp
     spec:
       nodeSelector:
         type: backend
       containers:
-        - name: java_app
-          image: darshitsri/java_app:latest
+        - name: javaapp
+          image: darshitsri/javaapp:latest
           ports:
             - containerPort: 8080
