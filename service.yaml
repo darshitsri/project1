@@ -1,12 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-   name: demo_appservice
+   name: java_appservice
    label:
-      app: demo_app
+      app: java_app
 spec:
   selector:
-     app: demo_app
+     app: java_app
   type: NodePort
   ports:
   - Nodeport: 30036
