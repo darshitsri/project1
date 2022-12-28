@@ -4,7 +4,7 @@ pipeline{
         stage('Git Checkout'){
             steps{ 
                 script{   
-                   git branch: 'java-application', url: 'https://github.com/darshitsri/project1.git'
+                   git branch: 'project-helm', url: 'https://github.com/darshitsri/project1.git'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline{
                     sh 'pwd'
                     sh 'ls -lrths'
                     sh 'docker image build -t java_app:$BUILD_ID .'
-                    sh 'docker image tag java_app:$BUILD_ID darshitsri/java_app'
+                    sh 'docker image tag java_app:$BUILD_ID darshitsri/java_app:latest'
                     //sh 'docker push darshitsri/java_app:latest'
                 }
             }
@@ -57,7 +57,8 @@ pipeline{
                 script{
                     sh 'pwd'
                     sh 'kubectl get ns'
-                    sh 'kubectl apply -f  k8sdeployment.yaml' 
+                    sh 'helm upgrade --install java-helm demo-helm'
+                    // sh 'kubectl apply -f  k8sdeployment.yaml' 
                    // sh 'kubectl apply -f  service.yaml'
                 }
             }
