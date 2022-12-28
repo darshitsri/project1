@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: darshitsri/java_app:latest
+  repository: darshitsri/java_app
   pullPolicy: IfNotPresent
 
 service:
