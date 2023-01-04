@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: Ingressservice
+  name: IngressService
   annotations:
 #   Ingress Core Settings
     kubernetes.io/ingress.class: alb
