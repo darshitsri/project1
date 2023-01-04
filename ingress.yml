@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: Ingress-service
+  annotations:
+#   Ingress Core Settings
+    kubernetes.io/ingress.class: alb
+    alb.ingress.lubernetes.io/ achene: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            patType: Prefix 
+            backend:
+              service:
+                name: springboot-app
+                port:
+                  number: 8085
