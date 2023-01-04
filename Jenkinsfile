@@ -4,7 +4,7 @@ pipeline{
         stage('Git Checkout'){
             steps{ 
                 script{   
-                   git branch: 'python-app', credentialsId: 'aws-code-commit-cred', url: 'https://git-codecommit.us-east-2.amazonaws.com/v1/repos/devops-demo-poc'
+                   git branch: 'python-app', url: 'https://github.com/darshitsri/project1.git'
                 }
             }
         }
@@ -24,7 +24,8 @@ pipeline{
                 script{
                     sh 'pwd'
                     sh 'kubectl get ns'
-                    sh 'kubectl apply -f  k8s-deployment.yaml' 
+                    sh 'helm upgrade --install pythonapp-helm python-helm'
+                    //sh 'kubectl apply -f  k8s-deployment.yaml' 
                    // sh 'kubectl apply -f  service.yaml'
                 }
             }
