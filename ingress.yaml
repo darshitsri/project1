@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ngress-ervice
+  name: ingress-service-java
   annotations:
 #   Ingress Core Settings
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/ achene: internet-facing
+    alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
