@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
   labels:
-    {{- include "demo-helm.labels" . | nindent 4 }}
+    {{- include "python-helm.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -11,4 +11,4 @@ spec:
       targetPort: {{ .Values.service.targetport }}
       name: http
   selector:
-    {{- include "demo-helm.selectorLabels" . | nindent 4 }}
+    {{- include "python-helm.selectorLabels" . | nindent 4 }}
