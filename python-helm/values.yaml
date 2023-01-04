@@ -1,14 +1,14 @@
 replicaCount: 2
 
 image:
-  repository: darshitsri/java_app
+  repository: darshitsri/python-app
   pullPolicy: IfNotPresent
 
 service:
   type: LoadBalancer
-  port: 80
-  targetport: 8085
-  name: springboot-app
+  port: 5000
+  targetport: 5000
+  name: python-app
 
 container:
-  name: my-springboot-app
+  name: my-python-app
