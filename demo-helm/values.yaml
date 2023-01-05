@@ -6,10 +6,8 @@ image:
 
 service:
   type: NodePort
-  #port: 8085
-  port: 80
-  targetport: 80
-  #targetport: 8085
+  port: 8085
+  targetport: 8085
   name: springboot-app
 
 container:
