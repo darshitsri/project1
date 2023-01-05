@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "python-helm.labels" . | nindent 4 }}
   annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /templates/index.html
+    alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
   type: {{ .Values.service.type }}
   ports:
