@@ -10,7 +10,7 @@ pipeline{
         }
         stage ('Dependency check'){
             steps{
-             //   dependencyCheck additionalArguments: 'scan = "/var/lib/jenkins/workspace/${JOB_NAME}" --format ALL', odcInstallation: 'OWASP-Dependency-Check'
+             //   dependencyCheck additionalArguments: 'scan = "/var/lib/jenkins/workspace/${JOB_NAME}" --format ALL', odcInstallation: 'OWASP-Dependency-Check xyz'
             //dependencyCheckPublisher pattern: '**/dependency-check-report.xml', unstableNewCritical: 1, unstableNewHigh: 2, unstableTotalCritical: 1, unstableTotalHigh: 2
               dependencyCheck additionalArguments: '--scan /var/lib/jenkins/workspace/${JOB_NAME} --format ALL --disableYarnAudit', odcInstallation: 'OWASP-Dependency-Check' 
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml', unstableNewCritical: 90, unstableNewHigh: 90, unstableTotalCritical: 90, unstableTotalHigh: 90 
