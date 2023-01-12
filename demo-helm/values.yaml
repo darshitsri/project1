@@ -6,7 +6,7 @@ image:
 
 service:
   type: LoadBalancer
-  port: 8085
+  port: 80
   targetport: 8085
   name: springboot-app
 
