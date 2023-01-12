@@ -5,7 +5,7 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  type: Loadbalancer
+  type: LoadBalancer
   port: 8085
   targetport: 8085
   name: springboot-app
