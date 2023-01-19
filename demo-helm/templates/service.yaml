@@ -4,8 +4,8 @@ metadata:
   name: {{ .Values.service.name }}
   labels:
     {{- include "demo-helm.labels" . | nindent 4 }}
-  annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: /
+ // annotations:
+ //   alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
   type: {{ .Values.service.type }}
   ports:
