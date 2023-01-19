@@ -4,13 +4,12 @@ metadata:
   name: {{ .Values.service.name }}
   labels:
     {{- include "demo-helm.labels" . | nindent 4 }}
- // annotations:
- //   alb.ingress.kubernetes.io/healthcheck-path: /
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.targetport }}
       name: http
+      protocol: TCP
   selector:
     {{- include "demo-helm.selectorLabels" . | nindent 4 }}
