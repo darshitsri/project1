@@ -36,9 +36,9 @@ pipeline{
                 script{
                     sh 'pwd'
                     sh 'ls -lrths'
-                    sh 'docker image build -t java_app:$BUILD_ID .'
-                    sh 'docker image tag java_app:$BUILD_ID darshitsri/java_app'
-                    //sh 'docker push darshitsri/java_app:latest'
+                    sh 'docker image build -t java_app1:$BUILD_ID .'
+                    sh 'docker image tag java_app1:$BUILD_ID darshitsri/java_app1'
+                    //sh 'docker push darshitsri/java_app1:latest'
                 }
             }
          } 
@@ -47,7 +47,7 @@ pipeline{
                 script{
                     withCredentials([string(credentialsId: 'docker_hub1', variable: 'docker_hub_login')]) {
                         sh 'docker login -u darshitsri -p ${docker_hub_login}'
-                        sh 'docker image push darshitsri/java_app:latest'
+                        sh 'docker image push darshitsri/java_app1:latest'
                     }
                   }
                }
