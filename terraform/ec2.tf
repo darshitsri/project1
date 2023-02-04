@@ -7,3 +7,7 @@ resource "aws_instance" "terraform_instance" {
     Name = "terraform-instanace"
   }
 }
+output "instance_public_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.terraform_instance.public_ip
+}
