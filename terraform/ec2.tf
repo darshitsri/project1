@@ -6,8 +6,13 @@ resource "aws_instance" "terraform_instance" {
   tags = {
     Name = "terraform-instanace"
   }
+provisioner "local-exec" {
+    command = "command = "echo ${aws_instance.terraform_instance.public_ip} >> darhit.txt
+  }  
+  
 }
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
   value       = aws_instance.terraform_instance.public_ip
 }
+
