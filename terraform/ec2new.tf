@@ -7,7 +7,7 @@ resource "aws_instance" "terraform_instance" {
     Name = "terraform-instanace"
   }
     provisioner "local-exec" {
-    command = "echo ${aws_instance.terraform_instance.private_ip} >> sample.txt"
+    command = "echo ${aws_instance.terraform_instance.public_ip} >> sample.txt"
   }
 }
 output "instance_public_ip" {
