@@ -7,10 +7,10 @@ resource "aws_instance" "terraform_instance" {
     Name = "terraform-instanace"
   }
     provisioner "local-exec" {
-    command = "echo ${aws_instance.terraform_instance.public_ip} >> sample.txt"
+    command = "echo ${aws_instance.terraform_instance.public_ip} > sample.txt"
   }
 }
 output "instance_public_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.terraform_instance.public_ip
+  value       = aws_instance.terraform_instance.public_ip 
 }
