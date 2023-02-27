@@ -30,3 +30,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=darshitsri_project1  
+    - name: docker images push
+      run: |
+       docker build -t darshitsri/java-githubAction_image:$(date +%s)
+       echo "${{ secrets.DOCKER_PASS }}" | docker login -u "darshitsri" --password-stdin
+       docker push darshitsri/java-githubAction_image:$(date +%s)
