@@ -32,6 +32,6 @@ jobs:
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=darshitsri_project1  
     - name: docker images push
       run: |
-       docker build -t darshitsri/java-githubaction_image:$(date +%s) .
+       docker build -t darshitsri/java-githubaction_image:latest .
        echo "${{ secrets.DOCKER_PASS }}" | docker login -u "darshitsri" --password-stdin
-       docker push darshitsri/java-githubaction_image:$(date +%s)
+       docker push darshitsri/java-githubaction_image:latest
