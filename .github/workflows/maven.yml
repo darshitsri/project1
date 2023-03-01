@@ -35,7 +35,7 @@ jobs:
        docker build -t darshitsri/java-githubaction_image:latest .
        echo "${{ secrets.DOCKER_PASS }}" | docker login -u "darshitsri" --password-stdin
        docker push darshitsri/java-githubaction_image:latest
-     - name: Upload artifacts
+    - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
         name: webapp
