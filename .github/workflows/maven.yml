@@ -36,6 +36,7 @@ jobs:
         name: webapp
         path: /home/runner/work/project1/project1/target/springbootApp.jar
   imagePush:
+      needs: build 
       runs-on: ubuntu-latest
       steps:
        - name: docker images push
