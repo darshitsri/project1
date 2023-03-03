@@ -37,7 +37,7 @@ jobs:
        runs-on: ubuntu-latest
        needs: build
        steps:
-         - uses: actions/checkout@v3
+ #        - uses: actions/checkout@v3
          - name: docker images push
            run: |
             docker build -t darshitsri/java-githubaction_image:latest .
