@@ -5,9 +5,7 @@ on:
     branches: [ "java-application" ]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -35,13 +33,13 @@ jobs:
       with:
         name: webapp
         path: /home/runner/work/project1/project1/target/springbootApp.jar
- ## imagePush:
- ##     needs: build 
- ##     runs-on: ubuntu-latest
-##      steps:
-##       - uses: actions/checkout@v3
-    - name: docker images push
-      run: |
-          docker build -t darshitsri/java-githubaction_image:latest .
-          echo "${{ secrets.DOCKER_PASS }}" | docker login -u "darshitsri" --password-stdin
-          docker push darshitsri/java-githubaction_image:latest
+  image-push:
+       runs-on: ubuntu-latest
+       needs: build
+       steps:
+         - uses: actions/checkout@v3
+         - name: docker images push
+           run: |
+            docker build -t darshitsri/java-githubaction_image:latest .
+            echo "${{ secrets.DOCKER_PASS }}" | docker login -u "darshitsri" --password-stdin
+            docker push darshitsri/java-githubaction_image:latest
