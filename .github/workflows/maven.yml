@@ -14,6 +14,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Custom Github Action
+      id: hello
+      uses: darshitsri/github_actions_test@v1
+      with:
+          who-to-greet: 'Hello Team this my Own GITHUB ACTION'
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: List the current directory
