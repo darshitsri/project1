@@ -18,7 +18,7 @@ jobs:
       id: hello
       uses: darshitsri/github_actions_test@v1
       with:
-          who-to-greet: 'Hello Team this my Own GITHUB ACTION'
+          message: 'Hello Team this my Own GITHUB ACTION created by Darshit'
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: Build with Maven
