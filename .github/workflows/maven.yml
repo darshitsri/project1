@@ -16,7 +16,7 @@ jobs:
         cache: maven
     - name: Custom Github Action
       id: hello
-      uses: darshitsri/github_actions_test@v1
+      uses: darshitsri/github_actions_test@v2
       with:
           message: 'Hello Team this my Own GITHUB ACTION created by Darshit'
     - name: Get the output time
