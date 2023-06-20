@@ -18,4 +18,4 @@ jobs:
         JROG_TOKEN: ${{ secrets.JROG_TOKEN }}
     - run: |
        jf rt ping
-       jf rt u test.txt test-exe-generic-local/
+       jf rt upload test.txt test-exe-generic-local/
