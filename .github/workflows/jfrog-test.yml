@@ -13,7 +13,7 @@ jobs:
       JF_URL: https://jfrogtestlti.jfrog.io/
     
     # Basic authentication credentials
-      USER_JFROG: ${{ secrets.JF_USER }}
-      PASS_JFROG: ${{ secrets.JF_PASSWORD }}
+      USER_JFROG: ${{ secrets.USER_JFROG }}
+      PASS_JFROG: ${{ secrets.PASS_JFROG }}
     - run: |
        jf rt ping
