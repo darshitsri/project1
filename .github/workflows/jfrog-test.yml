@@ -13,8 +13,6 @@ jobs:
         JF_URL: ${{ secrets.JF_URL }}
     
     # Basic authentication credentials
-        USER_JFROG: ${{ secrets.USER_JFROG }}
-        PASS_JFROG: ${{ secrets.PASS_JFROG }}
         JROG_TOKEN: ${{ secrets.JROG_TOKEN }}
     - run: |
        jf rt ping
