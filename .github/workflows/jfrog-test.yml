@@ -10,10 +10,10 @@ jobs:
     - uses: jfrog/setup-jfrog-cli@v3
       env:
     # JFrog platform url (for example: https://acme.jfrog.io) 
-      JF_URL: ${{ secrets.JF_URL }}
+        JF_URL: ${{ secrets.JF_URL }}
     
     # Basic authentication credentials
-      USER_JFROG: ${{ secrets.USER_JFROG }}
-      PASS_JFROG: ${{ secrets.PASS_JFROG }}
+        USER_JFROG: ${{ secrets.USER_JFROG }}
+        PASS_JFROG: ${{ secrets.PASS_JFROG }}
     - run: |
        jf rt ping
