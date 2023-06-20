@@ -17,3 +17,4 @@ jobs:
         PASS_JFROG: ${{ secrets.PASS_JFROG }}
     - run: |
        jf rt ping
+       jf rt u test.txt artifacts/
