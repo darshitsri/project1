@@ -1,10 +1,19 @@
-- uses: jfrog/setup-jfrog-cli@v3
-  env:
+
+on:
+  push:
+    branches: [ "java-application" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: jfrog/setup-jfrog-cli@v3
+      env:
     # JFrog platform url (for example: https://acme.jfrog.io) 
-    JF_URL: ${{ secrets.JF_URL }}
+      JF_URL: https://jfrogtestlti.jfrog.io/
     
     # Basic authentication credentials
-    JF_USER: ${{ secrets.JF_USER }}
-    JF_PASSWORD: ${{ secrets.JF_PASSWORD }}
-- run: |
-    jf rt ping
+      USER_JFROG: ${{ secrets.JF_USER }}
+      PASS_JFROG: ${{ secrets.JF_PASSWORD }}
+    - run: |
+       jf rt ping
