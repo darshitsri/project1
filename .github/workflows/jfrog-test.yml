@@ -11,6 +11,8 @@ jobs:
      run: pwd
    - name: Get request
      run:  curl -X GET "https://dummy.restapiexample.com/api/v1/employees"
+   - name: Post request
+     run: curl -X POST "https://dummy.restapiexample.com/api/v1/create"
 #    - uses: jfrog/setup-jfrog-cli@v3
 #      env:
 #        JF_URL: ${{ secrets.JF_URL }}
